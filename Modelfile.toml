@@ -1,5 +1,6 @@
 name = "fair"
-run = "docker run --rm -v \"$PWD/run:/run\" ${IMAGE} ${ARGS} > run/output_data.output.json"
+run = "docker run --rm -v \"$PWD/run:/run\" ${IMAGE} ${ARGS} > run/fair_data.output.json"
+
 image = "fair-runner:local"
 args = ["{input:fair_input}"]
 
@@ -13,8 +14,14 @@ required = []
 
 
 [[outputs]]
-name = "output_data"
+name = "fair_data"
+
 
 [outputs.schema]
 type = "object"
 required = ["timebounds", "scenarios", "configs", "temperature_K", "co2_ppm", "forcing_sum_Wm2"]
+
+
+
+
+
