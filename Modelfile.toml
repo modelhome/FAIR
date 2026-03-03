@@ -1,7 +1,7 @@
 name = "fair"
-run = "docker run --rm -v \"$PWD/run:/run\" ${IMAGE} ${ARGS}"
+run = "docker run --rm -v \"$PWD/run:/run\" ${IMAGE} ${ARGS} > run/output_data.output.json"
 image = "fair-runner:local"
-args = ["--in", "{input:fair_input}", "--out", "{output:output_data}"]
+args = ["{input:fair_input}"]
 
 [[inputs]]
 # TODO: this should eventually support URLs as well as local files
