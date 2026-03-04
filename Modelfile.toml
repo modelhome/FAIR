@@ -1,12 +1,12 @@
 name = "fair"
-run = "docker run --rm -v \"$PWD/run:/run\" ${IMAGE} ${ARGS} > run/fair_data.output.json"
+run = "docker run --rm -v \"$PWD/run:/run\" ${IMAGE} ${ARGS} > run/climate_projections.output.json"
 
 image = "fair-runner:local"
-args = ["{input:fair_input}"]
+args = ["{input:emissions}"]
 
 [[inputs]]
 # TODO: this should eventually support URLs as well as local files
-name = "fair_input"
+name = "emissions"
 
 [inputs.schema]
 type = "object"
@@ -14,14 +14,9 @@ required = []
 
 
 [[outputs]]
-name = "fair_data"
+name = "climate_projections"
 
 
 [outputs.schema]
 type = "object"
 required = ["timebounds", "scenarios", "configs", "temperature_K", "co2_ppm", "forcing_sum_Wm2"]
-
-
-
-
-
