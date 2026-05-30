@@ -1,4 +1,5 @@
-name = "fair"
+name = "Emissions Climate Projection"
+description = "Runs the FaIR reduced-complexity climate model to project global temperature, atmospheric CO₂, and radiative forcing from a greenhouse-gas emissions scenario. Fast enough for scenario sweeps and policy analysis; falls back to bundled defaults when no input is supplied. Feeds Climate Damage Premium (DICE)."
 run = "docker run --rm -v \"$PWD/run:/run\" ${IMAGE} ${ARGS} > run/climate_projections.output.json"
 
 image = "fair-runner:local"
