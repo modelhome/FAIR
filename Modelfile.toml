@@ -32,3 +32,9 @@ name = "climate_projections"
 [outputs.schema]
 type = "object"
 required = ["timebounds", "scenarios", "configs", "temperature_K", "co2_ppm", "forcing_sum_Wm2"]
+properties.timebounds.type = "array"
+properties.scenarios.type = "array"
+properties.configs.type = "array"
+properties.temperature_K.type = "object"
+properties.co2_ppm.type = "object"
+properties.forcing_sum_Wm2.type = "object"
